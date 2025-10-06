@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --background: 215 68% 8%;
+    --foreground: 226 70% 92%;
+
+    --card: 217 57% 14%;
+    --card-foreground: 226 70% 92%;
+
+    --popover: 217 57% 14%;
+    --popover-foreground: 226 70% 92%;
+
+    --primary: 166 100% 65%;
+    --primary-foreground: 215 68% 8%;
+
+    --secondary: 218 41% 20%;
+    --secondary-foreground: 226 70% 92%;
+
+    --muted: 220 32% 18%;
+    --muted-foreground: 225 20% 65%;
+
+    --accent: 166 100% 65%;
+    --accent-foreground: 215 68% 8%;
+
+    --destructive: 0 84% 63%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 218 41% 20%;
+    --input: 218 41% 20%;
+    --ring: 166 100% 65%;
+
+    --radius: 1.25rem;
+
+    --sidebar-background: 217 57% 14%;
+    --sidebar-foreground: 226 70% 92%;
+
+    --sidebar-primary: 166 100% 65%;
+    --sidebar-primary-foreground: 215 68% 8%;
+
+    --sidebar-accent: 218 41% 20%;
+    --sidebar-accent-foreground: 226 70% 92%;
+
+    --sidebar-border: 218 41% 20%;
+    --sidebar-ring: 166 100% 65%;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: "Space Grotesk", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    @apply bg-background text-foreground antialiased;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--background));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+  }
+
+  p {
+    @apply text-foreground/90;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-xl bg-card/60 border border-border/30;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:translate-y-[-4px];
+  }
+
+  .section-container {
+    @apply py-16 md:py-24;
+  }
+
+  .content-card {
+    @apply rounded-2xl border border-border/40 bg-card/70 p-6 md:p-8 transition-all duration-300 hover:border-accent/40 hover:bg-accent/10;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom background gradients */
+@layer base {
+  .bg-mesh-gradient {
+    background-image:
+      radial-gradient(circle at 25% 25%, rgba(100, 255, 218, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(166, 100%, 255, 0.05) 0%, transparent 50%);
+  }
+
+  .bg-hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+  }
+}
