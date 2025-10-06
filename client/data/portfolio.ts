@@ -245,7 +245,7 @@ export const projects: ProjectItem[] = [
       "Real-time comment and post interactions",
       "Admin dashboard for product and community management"
     ],
-    liveUrl: "hikari-cha-web.vercel.app",
+    liveUrl: "https://hikari-cha-web.vercel.app",
     githubUrl: "https://github.com/arthasenal/HikariChaWeb",
     period: "September 2025 – Present",
     status: "in-progress",

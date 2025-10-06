@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Play, Code, Calendar, Tag } from "lucide-react";
+import { ExternalLink, Github, Code, Calendar, Tag } from "lucide-react";
 import { ProjectDetail } from "@/components/ui/ProjectDetail";
 import { projects } from "@/data/portfolio";
 
@@ -36,8 +36,9 @@ export function ProjectsSection() {
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
             className="group"
+            onClick={() => setSelectedProject(project.id)}
           >
-            <div className="content-card h-full flex flex-col shadow-soft hover:shadow-glow">
+            <div className="content-card h-full flex flex-col shadow-soft hover:shadow-glow cursor-pointer">
               {/* Project Image */}
               <div className="relative overflow-hidden rounded-xl">
                 <img
@@ -66,13 +67,6 @@ export function ProjectsSection() {
 
                 {/* Quick Actions Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <button
-                    onClick={() => setSelectedProject(project.id)}
-                    className="rounded-full bg-accent/90 p-3 text-background transition-all duration-300 hover:bg-accent hover:scale-110"
-                    aria-label="View details"
-                  >
-                    <Play className="h-4 w-4" />
-                  </button>
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
@@ -80,6 +74,7 @@ export function ProjectsSection() {
                       rel="noopener noreferrer"
                       className="rounded-full bg-background/90 p-3 text-foreground transition-all duration-300 hover:bg-accent hover:text-background hover:scale-110"
                       aria-label="View live project"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <ExternalLink className="h-4 w-4" />
                     </a>
@@ -91,6 +86,7 @@ export function ProjectsSection() {
                       rel="noopener noreferrer"
                       className="rounded-full bg-background/90 p-3 text-foreground transition-all duration-300 hover:bg-accent hover:text-background hover:scale-110"
                       aria-label="View source code"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <Github className="h-4 w-4" />
                     </a>
@@ -138,13 +134,9 @@ export function ProjectsSection() {
                     <Calendar className="h-3 w-3" />
                     <span>{project.period.split(' – ')[0]}</span>
                   </div>
-                  <button
-                    onClick={() => setSelectedProject(project.id)}
-                    className="flex items-center gap-1 text-accent hover:text-accent/80 transition-colors"
-                  >
-                    <span>View Details</span>
-                    <ExternalLink className="h-3 w-3" />
-                  </button>
+                  <div className="flex items-center gap-1 text-accent">
+                    <span>Click to view details</span>
+                  </div>
                 </div>
               </div>
             </div>
