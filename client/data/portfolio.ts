@@ -133,16 +133,6 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    company: "BADAN NASIONAL SERTIFIKASI PROFESI (BNSP)",
-    period: "July 2022 – February 2023",
-    position: "SYSTEM ASSISTANT",
-    tags: ["RPA", "Automation", "System Design"],
-    responsibilities: [
-      "Designed a system that reduced paper usage and operational costs.",
-      "Implemented RPA to automate file and image extraction, streamlining data entry.",
-    ],
-  },
-  {
     company: "LIGHTNING ENTERTAINMENT",
     period: "May 2014 – June 2017",
     position: "DEVELOPER",
@@ -230,23 +220,22 @@ export const projects: ProjectItem[] = [
     category: "Machine Learning"
   },
   {
-    id: "Hikaricha",
-    title: "Hikaricha - Matcha Community",
-    description: "A marketplace and community platform dedicated to matcha enthusiasts, featuring product discovery, forums, and social interactions.",
-    longDescription: "Hikaricha is a marketplace and community platform dedicated to matcha enthusiasts. The platform allows users to discover, discuss, and purchase matcha-related products while engaging in forum-based discussions about brewing methods, health benefits, and culture. Designed with scalability and user interaction in mind, Hikaricha integrates modern UI/UX principles and efficient data management for seamless user experiences.",
-    image: "https://hikari-cha-web.vercel.app/hero-matcha-banner.jpg",
+    id: "Dashboard UKM BAND",
+    title: "BandHUB - Dashboard for UKM Band BINUS",
+    description: "A web-based dashboard application to manage events, members, and resources for the UKM Band at BINUS University.",
+    longDescription: "BandHUB is a comprehensive dashboard designed specifically for the UKM Band at BINUS University. It streamlines the management of events, member information, and resource allocation, providing an intuitive interface for administrators and band members alike. The platform supports scheduling, communication, and real-time updates to ensure smooth coordination and enhanced productivity within the band community.",
+    image: "https://i.imgur.com/vDHl62h.jpeg",
     technologies: ["Next.js", "MySQL", "GitHub"],
     features: [
-      "Marketplace for matcha products and accessories",
-      "User forums and discussion boards",
-      "Authentication and profile system",
-      "Real-time comment and post interactions",
-      "Admin dashboard for product and community management"
+      "Event scheduling and management",
+      "Managing member profiles and roles",
+      "Resource allocation and tracking",
+      "Real-time songsheet sharing and updates",
+      "Notification feature for reminder through PWA"
     ],
-    liveUrl: "https://hikari-cha-web.vercel.app",
-    githubUrl: "https://github.com/arthasenal/HikariChaWeb",
-    period: "September 2025 – Present",
-    status: "in-progress",
+    liveUrl: "https://ukmbandbinusbekasi.vercel.app",
+    period: "October 2025",
+    status: "completed",
     category: "Web Dev"
   }
 ];
